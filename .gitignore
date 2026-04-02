@@ -173,9 +173,52 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# Cursor  
-#  Cursor is an AI-powered code editor.`.cursorignore` specifies files/directories to 
+# Cursor
+#  Cursor is an AI-powered code editor.`.cursorignore` specifies files/directories to
 #  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# === SSH Connect — Секреты и чувствительные данные ===
+
+# Ключ шифрования (НИКОГДА не коммить!)
+.encryption_key
+
+# Зашифрованные профили с паролями
+ssh_connections.json
+
+# Последний использованный профиль
+last_profile.txt
+
+# Файлы сессий VNC
+.vnc/
+.vnc/passwd
+
+# Файлы PuTTY/Kitty
+PUTTY.RND
+*.rnd
+
+# Скрипты миграции (могут содержать секреты)
+migrate_encrypt.py
+
+# Логи
+*.log
+logs/
+
+# Временные файлы
+*.tmp
+*.temp
+~$*.doc*
+~$*.xls*
+
+# Файлы Windows
+Thumbs.db
+Desktop.ini
+
+# Скриншоты и изображения (опционально)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
