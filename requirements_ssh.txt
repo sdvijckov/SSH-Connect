@@ -1,3 +1,8 @@
 paramiko
 pyinstaller
 cryptography
+pynput
+pywin32
+psutil
+python-xlib
+uvicorn

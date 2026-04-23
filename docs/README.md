@@ -9,7 +9,7 @@
 | [README.md](README.md) | Общая информация о проекте |
 | [INSTALL.md](INSTALL.md) | Установка и запуск |
 | [USAGE.md](USAGE.md) | Использование программы |
-| [GUI_SETUP.md](GUI_SETUP.md) | Настройка графического интерфейса (VNC) |
+| [MOVE_CURSOR.md](MOVE_CURSOR.md) | Прокрутка терминала Kitty |
 | [COMMANDS.md](COMMANDS.md) | Справочник команд Linux |
 | [ISSUES.md](ISSUES.md) | Решение проблем |
 | [ABOUT.md](ABOUT.md) | О проекте |

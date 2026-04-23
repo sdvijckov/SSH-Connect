@@ -57,22 +57,7 @@ pip install -r requirements_ssh.txt
 
 ---
 
-### VNC Viewer (графический интерфейс)
-
-**RealVNC Viewer** — клиент для подключения к VNC.
-
-1. Скачай: https://www.realvnc.com/en/connect/download/viewer/
-2. Установи или скачай portable версию
-3. Помести `vncviewer.exe` в папку проекта:
-   ```
-   D:\Projects python\SSH Connect\vncviewer.exe
-   ```
-
----
-
 ## 4. Запуск программы
-
-### Вариант 1: Через командную строку
 
 ```bash
 cd D:\Projects python\SSH Connect
@@ -113,13 +98,6 @@ python -c "import cryptography; print(cryptography.__version__)"
 kitty.exe
 ```
 
-### Проверка VNC Viewer
-
-```bash
-# Должно открыться окно VNC Viewer
-vncviewer.exe
-```
-
 ---
 
 ## 6. Сборка в EXE (опционально)
@@ -140,11 +118,18 @@ pyinstaller --onefile --windowed --name "SSH Connect" main.py
 2. **Введи данные** VPS (хост, логин, пароль)
 3. **Нажми** "🔗 Подключиться"
 4. **Kitty откроется** автоматически (свёрнутым)
-5. **Для GUI** нажми "🖥️ Открыть GUI"
+5. **Move Cursor запустится** для прокрутки (свёрнутым)
+6. **Для GUI** нажми "🖥️ Открыть GUI"
+
+**Move Cursor** позволяет прокручивать окно Kitty клавишами:
+- `Home` / `End` — вертикальная прокрутка
+- `Shift + Home/End` — горизонтальная
+- `F12` — пауза перехвата
 
 ---
 
 **См. также:**
 - [Использование](USAGE.md)
 - [Настройка GUI](GUI_SETUP.md)
+- [Move Cursor](MOVE_CURSOR.md)
 - [Решение проблем](ISSUES.md)

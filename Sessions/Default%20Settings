@@ -104,7 +104,9 @@ BellOverload\1\
 BellOverloadN\5\
 BellOverloadT\2000\
 BellOverloadS\5000\
-ScrollbackLines\10000\
+ScrollbackLines\1000000\
+ResetScrollbackOnDisplayActivity\0\
+PushErasedTextToScrollback\0\
 DECOriginMode\0\
 AutoWrapMode\1\
 LFImpliesCR\0\
@@ -113,8 +115,8 @@ DisableArabicShaping\0\
 DisableBidi\0\
 WinNameAlways\1\
 WinTitle\\
-TermWidth\80\
-TermHeight\24\
+TermWidth\120\
+TermHeight\30\
 Font\Courier%20New\
 FontIsBold\0\
 FontCharSet\0\
@@ -181,7 +183,7 @@ CapsLockCyr\0\
 ScrollBar\1\
 ScrollBarFullScreen\0\
 ScrollOnKey\0\
-ScrollOnDisp\1\
+ScrollOnDisp\0\
 EraseToScrollback\1\
 LockSize\0\
 BCE\1\

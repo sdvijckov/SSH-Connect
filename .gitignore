@@ -202,6 +202,10 @@ PUTTY.RND
 # Скрипты миграции (могут содержать секреты)
 migrate_encrypt.py
 
+# move_cursor
+move_cursor/src/__pycache__/
+move_cursor/src/backends/__pycache__/
+
 # Логи
 *.log
 logs/

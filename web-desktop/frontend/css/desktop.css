@@ -1,0 +1,261 @@
+/* Рабочий стол — полный экран */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#desktop {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #ede4f0 0%, #f0e8f2 50%, #f4eef4 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Водяной знак */
+
+#watermark {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    opacity: 0.12;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#watermark img {
+    width: 64px;
+    height: 64px;
+}
+
+/* Toolbar */
+
+#toolbar {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: linear-gradient(180deg, #d4c4de, #c8b8d4);
+    border-bottom: 2px solid #a890b0;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+#toolbar button {
+    padding: 6px 14px;
+    border: 1px solid #b0a0c0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #3a2a4a;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+#toolbar button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #9070a0;
+}
+
+#toolbar button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+#current-path {
+    flex: 1;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #c0b0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Consolas', monospace;
+    color: #4a3058;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Список файлов */
+
+#file-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s;
+    gap: 12px;
+    user-select: none;
+}
+
+.file-item:hover {
+    background: rgba(160, 120, 180, 0.12);
+}
+
+.file-item.selected {
+    background: rgba(160, 120, 180, 0.2);
+    outline: 1px solid #a078b8;
+}
+
+.file-item .file-icon {
+    font-size: 22px;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.file-item .file-name {
+    flex: 1;
+    font-size: 14px;
+    color: #3a2a1a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-item .file-size {
+    font-size: 12px;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.file-item .file-modified {
+    font-size: 11px;
+    color: #aaa;
+    flex-shrink: 0;
+    min-width: 130px;
+    text-align: right;
+}
+
+/* Статус-бар */
+
+#status-bar {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    background: linear-gradient(180deg, #8a6a9e, #7a5a8e);
+    color: white;
+    font-size: 12px;
+    flex-shrink: 0;
+    min-height: 26px;
+    gap: 8px;
+}
+
+#status-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+#status-quote {
+    flex: 1;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.85;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Загрузка */
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #9070a0;
+    font-size: 16px;
+}
+
+.loading::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e4d4ee;
+    border-top-color: #a078b8;
+    border-radius: 50%;
+    margin-right: 12px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Пустая папка */
+
+.empty-dir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #888;
+    font-size: 15px;
+}
+
+/* Контекстное меню */
+
+#context-menu {
+    position: fixed;
+    background: #f4eef6;
+    border: 1px solid #c8b0d8;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 6px 0;
+    z-index: 9999;
+    min-width: 200px;
+}
+
+#context-menu.hidden {
+    display: none;
+}
+
+.context-menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3a2a4a;
+    transition: background 0.15s;
+}
+
+.context-menu-item:hover {
+    background: rgba(160, 120, 180, 0.15);
+}
+
+/* Скроллбар */
+
+#file-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+#file-list::-webkit-scrollbar-track {
+    background: rgba(230, 215, 235, 0.5);
+}
+
+#file-list::-webkit-scrollbar-thumb {
+    background: #c0a8d0;
+    border-radius: 5px;
+}
+
+#file-list::-webkit-scrollbar-thumb:hover {
+    background: #a088b8;
+}

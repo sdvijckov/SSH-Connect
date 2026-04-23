@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Файловый менеджер — Собачья мудрость</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/static/css/desktop.css">
+    <link rel="stylesheet" href="/static/css/window.css">
+</head>
+<body>
+
+    <!-- Рабочий стол — файловая система -->
+    <div id="desktop">
+
+        <!-- Водяной знак -->
+        <div id="watermark">
+            <img src="/static/favicon.ico" alt="">
+        </div>
+
+        <!-- Toolbar -->
+        <div id="toolbar">
+            <button id="btn-back" disabled title="Назад">⬆️ Назад</button>
+            <button id="btn-refresh" title="Обновить">🔄</button>
+            <button id="btn-mkdir" title="Новая папка">📁+ Папка</button>
+            <div id="current-path">/</div>
+        </div>
+
+        <!-- Список файлов -->
+        <div id="file-list">
+            <div class="loading">Загрузка...</div>
+        </div>
+
+        <!-- Статус-бар -->
+        <div id="status-bar">
+            <span id="status-text">Подключение...</span>
+            <img id="status-icon" src="/static/favicon.ico" alt="">
+            <span id="status-quote"></span>
+        </div>
+    </div>
+
+    <!-- Контекстное меню -->
+    <div id="context-menu" class="hidden">
+        <div class="context-menu-item" data-action="refresh">🔄 Обновить</div>
+        <div class="context-menu-item" data-action="mkdir">📁+ Новая папка</div>
+        <div class="context-menu-item" data-action="delete">🗑️ Удалить</div>
+        <div class="context-menu-item" data-action="rename">✏️ Переименовать</div>
+    </div>
+
+    <script src="/static/js/context-menu.js"></script>
+    <script src="/static/js/apps/file-manager.js"></script>
+    <script src="/static/js/desktop.js"></script>
+
+</body>
+</html>
